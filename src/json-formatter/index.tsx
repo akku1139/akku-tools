@@ -5,7 +5,7 @@ const app = new Hono();
 
 app.get('*', renderer);
 
-app.get('/format', (c) => {
+app.get('/format', async (c) => {
   const body = await c.req.parseBody();
   return c.render(<>
     <code>{JSON.parse(body.json)}</code>
