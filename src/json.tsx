@@ -8,8 +8,9 @@ app.get('*', renderer);
 app.get("/", (c) => {
   return c.render(<>
     <p>JavaScript不要のJSON整形ツール</p>
-    <form action="/json/format">
-      <textarea name="json"></textarea>
+    <form action="/json/format" method="post">
+      <div><textarea name="json"></textarea></div>
+      <div><input type="number" name="indentSize"></input></div>
       <button type="submit">整形</button>
     </form>
   </>);
@@ -18,7 +19,7 @@ app.get("/", (c) => {
 app.post('/format', async (c) => {
   const body = await c.req.parseBody();
   return c.render(<>
-    <code>{JSON.parse(body.json)}</code>
+    <code>{JSON.stringify(JSON.parse(body.json), null, Number(body.indentSize))}</code>
     <a href="/json">別の</a>
   </>);
 });
