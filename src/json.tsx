@@ -10,7 +10,7 @@ app.get("/", (c) => {
     <p>JavaScript不要のJSON整形ツール</p>
     <form action="/json/format" method="post">
       <div><textarea name="json"></textarea></div>
-      <div><input type="number" name="indentSize"></input></div>
+      <div><input type="number" name="indentSize" value="2" /></div>
       <button type="submit">整形</button>
     </form>
   </>);
