@@ -8,7 +8,7 @@ const app = new Hono();
 app.get('*', renderer);
 
 app.get("/", (c) => {
-  return c.render(<>
+  return c.html(<>
     <a href="/json">JSON整形</a>
   </>);
 })
