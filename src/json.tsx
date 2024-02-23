@@ -19,7 +19,7 @@ app.get("/", (c) => {
 app.post('/format', async (c) => {
   const body = await c.req.parseBody();
   return c.render(<>
-    <code>{JSON.stringify(JSON.parse(body.json), null, Number(body.indentSize))}</code>
+    <div><pre><code>{JSON.stringify(JSON.parse(body.json), null, Number(body.indentSize))}</code></pre></div>
     <a href="/json">別の</a>
   </>);
 });
