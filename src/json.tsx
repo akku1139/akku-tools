@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import { renderer } from "/renderer.tsx";
+import { renderer } from "./renderer.tsx";
 
 const app = new Hono();
 

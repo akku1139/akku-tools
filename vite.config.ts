@@ -9,6 +9,6 @@ export default defineConfig({
     devServer({
       entry: 'src/index.tsx'
     }),
-    tsconfigPaths(),
+    tsconfigPaths(), // 効いてない
   ],
 });
