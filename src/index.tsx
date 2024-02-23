@@ -16,6 +16,6 @@ app.get("/", (c) => {
   </>);
 })
 
-app.mount("/json", jsonFormatter);
+app.route("/json", jsonFormatter);
 
 export default app;
