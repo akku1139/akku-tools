@@ -5,7 +5,17 @@ const app = new Hono();
 
 app.get('*', renderer);
 
-app.get('/format', async (c) => {
+app.get("/", (c) => {
+  return c.render(<>
+    <p>JavaScript不要のJSON整形ツール</p>
+    <form action="/json/format">
+      <textarea name="json"></textarea>
+      <button type="submit">整形</button>
+    </form>
+  </>);
+});
+
+app.post('/format', async (c) => {
   const body = await c.req.parseBody();
   return c.render(<>
     <code>{JSON.parse(body.json)}</code>
