@@ -1,6 +1,6 @@
 import { jsxRenderer } from 'hono/jsx-renderer';
 
-export const renderer = jsxRenderer(({ children, title }) => {
+export const renderer = jsxRenderer(async ({ children, title }) => {
   return (
     <html>
       <head>
