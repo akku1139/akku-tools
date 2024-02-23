@@ -1,9 +1,7 @@
 import build from '@hono/vite-cloudflare-pages';
 import devServer from '@hono/vite-dev-server';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vite';
-
-const __dirname = import.meta.dirname;
-const __filename = import.meta.filename;
 
 export default defineConfig({
   plugins: [
@@ -11,10 +9,6 @@ export default defineConfig({
     devServer({
       entry: 'src/index.tsx'
     }),
+    tsconfigPaths(),
   ],
-  resolve: {
-    alias: {
-      '/': `${__dirname}/src/`,
-    },
-  },
 });
