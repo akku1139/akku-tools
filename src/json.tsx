@@ -35,9 +35,9 @@ app.post('/format', async (c) => {
       } catch(e: SyntaxError | TypeError) {
         return <>
           <p>エラーがー発生されました</p>
-          <code>
+          <pre><code>
             {e.name}: {e.message}
-          </code>
+          </code></pre>
         </>;
       }
     })()}</div>
