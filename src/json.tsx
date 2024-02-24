@@ -9,8 +9,14 @@ app.get("/", (c) => {
   return c.render(<>
     <p>JavaScript不要のJSON整形ツール</p>
     <form action="/json/format" method="post">
-      <div><textarea name="json"></textarea></div>
-      <div><input type="number" name="indentSize" value="2" /></div>
+      <div>
+        <textarea name="json" placeholder
+="ここにJSONを入力"></textarea>
+      </div>
+      <div>
+        <label for="indentSize">インデントの大きさ</label>
+        <input type="number" name="indentSize" value="2" />
+      </div>
       <button type="submit">整形</button>
     </form>
   </>, {
@@ -21,7 +27,13 @@ app.get("/", (c) => {
 app.post('/format', async (c) => {
   const body = await c.req.parseBody();
   return c.render(<>
-    <div><pre><code>{JSON.stringify(JSON.parse(body.json), null, Number(body.indentSize))}</code></pre></div>
+    <div><pre><code>{(() => {
+      try {
+        return JSON.stringify(JSON.parse(body.json), null, Number(body.indentSize));
+      } catch(e) {
+        return e;
+      }
+    })()}</code></pre></div>
     <a href="/json">別の</a>
   </>, {
     title: "整形結果",
