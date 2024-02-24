@@ -7,7 +7,12 @@ export const renderer = jsxRenderer(({ children, title }) => {
         <link href="/static/style.css" rel="stylesheet" />
         <title>{title}</title>
       </head>
-      <body>{children}</body>
+      <body>
+        <header>
+          <a href="/">ホーム</a>
+        </header>
+        <main>{children}</main>
+      </body>
     </html>
   );
 });

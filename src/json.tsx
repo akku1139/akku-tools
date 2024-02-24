@@ -3,7 +3,7 @@ import { renderer } from "./renderer.tsx";
 
 const app = new Hono();
 
-app.get('*', renderer);
+app.use('*', renderer);
 
 app.get("/", (c) => {
   return c.render(<>
@@ -13,7 +13,9 @@ app.get("/", (c) => {
       <div><input type="number" name="indentSize" value="2" /></div>
       <button type="submit">整形</button>
     </form>
-  </>);
+  </>, {
+    title: "JSON整形",
+  });
 });
 
 app.post('/format', async (c) => {
@@ -21,7 +23,9 @@ app.post('/format', async (c) => {
   return c.render(<>
     <div><pre><code>{JSON.stringify(JSON.parse(body.json), null, Number(body.indentSize))}</code></pre></div>
     <a href="/json">別の</a>
-  </>);
+  </>, {
+    title: "整形結果",
+  });
 });
 
 export default app;
