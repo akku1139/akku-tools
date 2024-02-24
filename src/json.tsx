@@ -27,13 +27,20 @@ app.get("/", (c) => {
 app.post('/format', async (c) => {
   const body = await c.req.parseBody();
   return c.render(<>
-    <div><pre><code>{(() => {
+    <div>{(() => {
       try {
-        return JSON.stringify(JSON.parse(body.json), null, Number(body.indentSize));
-      } catch(e) {
-        return e;
+        return <pre><code>{
+          JSON.stringify(JSON.parse(body.json), null, Number(body.indentSize))
+        }</code></pre>;
+      } catch(e: SyntaxError | TypeError) {
+        return <>
+          <p>エラーがー発生されました</p>
+          <code>
+            {e.name}: {e.message}
+          </code>
+        </>;
       }
-    })()}</code></pre></div>
+    })()}</div>
     <a href="/json">別の</a>
   </>, {
     title: "整形結果",
