@@ -13,6 +13,7 @@ app.get("/", (c) => {
     <p>基本的にクライアントJavaScript不要です</p>
     <ul>
       <li><a href="/json">JSON整形</a></li>
+      <li><a href="/dns">DNS lookup</a></li>
     </ul>
   </>, {
     title: "akku's toolbox",

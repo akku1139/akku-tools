@@ -10,7 +10,7 @@ app.get("/", (c) => {
     <p>JavaScript不要のJSON整形ツール</p>
     <form action="/json/format" method="post">
       <div>
-        <textarea name="json" placeholder
+        <textarea autofocus name="json" placeholder
 ="ここにJSONを入力"></textarea>
       </div>
       <div>
