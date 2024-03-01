@@ -12,6 +12,9 @@ export const renderer = jsxRenderer(({ children, title }) => {
           <a href="/">ホーム</a>
         </header>
         <main>{children}</main>
+        <footer>
+          <a href="https://github.com/akku1139/akku-tools/">ソースコード</a>
+        </footer>
       </body>
     </html>
   );
