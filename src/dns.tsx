@@ -18,7 +18,7 @@ app.get("/", (c) => {
   });
 });
 
-app.post('/lookup', async (c) => {
+app.get('/lookup', async (c) => {
   const domain = c.req.query('domain')
     .replace(/^https?:\/\//, "")
     .replace(/\/.*$/, "");
