@@ -5,6 +5,7 @@ export const renderer = jsxRenderer(({ children, title }) => {
     <html>
       <head>
         <link href="/static/style.css" rel="stylesheet" />
+        <link rel="icon" href="/favicon.ico" />
         <title>{title}</title>
       </head>
       <body>
