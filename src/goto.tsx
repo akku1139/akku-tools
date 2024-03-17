@@ -9,7 +9,7 @@ app.get("/", (c) => {
   return c.render(<>
     <form action="/goto/move" method="post">
       <label for="url">URL か 検索</label>
-      <input autofocus name="url" />
+      <input autofocus autocomplete="url" name="url" />
       <button type="submit">GOTO</button>
     </form>
   </>, {
