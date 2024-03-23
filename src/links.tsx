@@ -5,7 +5,7 @@ const sites: Array<{title: String, url: String, icon: String}> = [
 
 const Links = () => {
   return <div style="display: flex; flex-wrap: wrap;">
-    {sites.map((s) => <a href={s.url} style="height: 100px; width: 23%; border: 2px solid green;">
+    {sites.map((s) => <a href={s.url} style="height: 100px; width: 23%; border: 2px solid green; text-align: center;">
   <img src={s.icon} alt="アイコン" height="70px" width="70px" style="margin: auto 20px;" />
   {s.title}
 </a>)}
