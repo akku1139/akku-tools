@@ -32,7 +32,7 @@ app.get("/", (c) => {
     <Links />
 
     <hr />
-    <textarea cols="60" rows="20" placeholder="簡易メモ帳"></textarea>
+    <textarea rows="20" placeholder="簡易メモ帳" style="width: 100%"></textarea>
   </>, {
     title: "akku's toolbox",
   });
