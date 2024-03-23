@@ -4,6 +4,8 @@ import { renderer } from './renderer.tsx';
 import jsonFormatter from './json.tsx';
 import goto from "./goto.tsx";
 
+import Links from "./links.tsx";
+
 const app = new Hono();
 
 app.use('*', renderer);
@@ -25,6 +27,8 @@ app.get("/", (c) => {
       {/* <li><a href="/dns">DNS lookup</a></li> */}
       <li><a href="/goto">URL goto</a></li>
     </ul>
+
+    <Links />
 
     <textarea cols="30" rows="20" placeholder="簡易メモ帳"></textarea>
   </>, {
