@@ -28,9 +28,11 @@ app.get("/", (c) => {
       <li><a href="/goto">URL goto</a></li>
     </ul>
 
+    <hr />
     <Links />
 
-    <textarea cols="30" rows="20" placeholder="簡易メモ帳"></textarea>
+    <hr />
+    <textarea cols="60" rows="20" placeholder="簡易メモ帳"></textarea>
   </>, {
     title: "akku's toolbox",
   });
