@@ -1,5 +1,6 @@
 const sites: Array<{title: String, url: String, icon: String}> = [
   {title: "Twitter", url: "https://x.com", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png"},
+  {title: "GitHub", url: "https://github.com", icon: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg"},
 ]
 
 const Links = () => {
